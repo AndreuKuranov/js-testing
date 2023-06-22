@@ -4,10 +4,8 @@ import Users from "./Users";
 import axios from "axios";
 import userEvent from "@testing-library/user-event";
 import {MemoryRouter, Route, Routes} from "react-router-dom";
-import React from "react";
 import AppRouter from "../../router/AppRouter";
 import {renderWithRouter} from "../../tests/helpers/renderWithRouter";
-import UserDetailsPage from '../../pages/UserDetailsPage';
 
 jest.mock('axios');
 
@@ -50,7 +48,7 @@ describe('USERS TEST', () => {
     //     <Users />
     //   </MemoryRouter>
     // )
-    render(renderWithRouter(<Users />));
+    renderWithRouter(<Users />); // renderWithRouter - Хелпер для удобного тестирования компонентов
     const users = await screen.findAllByTestId('user-item');
     expect(users.length).toBe(3);
     await userEvent.click(users[0])

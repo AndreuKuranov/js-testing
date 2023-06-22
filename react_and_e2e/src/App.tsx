@@ -30,21 +30,13 @@
 
 // -------------------------------------------------------------------------
 
-import React from 'react';
-import { Routes, Route, Link } from "react-router-dom";
-import MainPage from './pages/MainPage';
-import AboutPage from './pages/AboutPage';
-import Users from './components/users/Users';
-import ErrorPage from './pages/ErrorPage';
-import UserDetailsPage from './pages/UserDetailsPage';
 import AppRouter from './router/AppRouter';
+import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {
   return (
     <div>
-      <Link to="/" data-testid="main-link">main</Link>
-      <Link to="/about" data-testid="about-link">about</Link>
-      <Link to="/users" data-testid="users-link">users</Link>
+      <Navbar />
       <AppRouter />
     </div>
   );
